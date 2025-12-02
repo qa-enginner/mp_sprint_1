@@ -1,6 +1,7 @@
 import uuid
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
+from django.utils.translation import gettext_lazy as _
 
 
 class TimeStampedMixin(models.Model):
@@ -20,39 +21,39 @@ class UUIDMixin(models.Model):
 
 
 class Genre(UUIDMixin, TimeStampedMixin):
-    name = models.CharField('name', max_length=255)
-    description = models.TextField('description', blank=True)
+    name = models.CharField(_('name'), max_length=255)
+    description = models.TextField(_('description'), blank=True)
 
     class Meta:
         # Ваши таблицы находятся в нестандартной схеме. Это нужно указать в классе модели
         db_table = "content\".\"genre"
         # Следующие два поля отвечают за название модели в интерфейсе
-        verbose_name = 'Жанр'
-        verbose_name_plural = 'Жанры'
+        verbose_name = _('Genre')
+        verbose_name_plural = _('Genres')
     
     def __str__(self):
         return self.name
 
 
 class Person(UUIDMixin, TimeStampedMixin):
-    full_name = models.CharField('full_name', max_length=255)
+    full_name = models.CharField(_('full_name'), max_length=255)
 
     class Meta:
         # Ваши таблицы находятся в нестандартной схеме. Его нужно указать в классе модели
         db_table = "content\".\"person"
         # Следующие два поля отвечают за название модели в интерфейсе
-        verbose_name = 'Актёр'
-        verbose_name_plural = 'Актёры'
+        verbose_name = _('Actor')
+        verbose_name_plural = _('Actors')
 
     def __str__(self):
         return self.full_name
 
 class FilmWork(UUIDMixin, TimeStampedMixin):
-    title = models.CharField('name', max_length=255)
-    description = models.TextField('description', blank=True)
-    creation_date = models.DateField('creation_date')
-    type = models.CharField('type', max_length=255, choices=[('movie', 'movie'), ('tv_show', 'tv_show')])
-    rating = models.FloatField('rating', blank=True,
+    title = models.CharField(_('title'), max_length=255)
+    description = models.TextField(_('description'), blank=True)
+    creation_date = models.DateField(_('creation_date'))
+    type = models.CharField(_('type'), max_length=255, choices=[('movie', 'movie'), ('tv_show', 'tv_show')])
+    rating = models.FloatField(_('rating'), blank=True,
                                validators=[MinValueValidator(0),
                                            MaxValueValidator(100)])
     genres = models.ManyToManyField(Genre, through='GenreFilmWork')
@@ -62,8 +63,8 @@ class FilmWork(UUIDMixin, TimeStampedMixin):
         # Ваши таблицы находятся в нестандартной схеме. Это нужно указать в классе модели
         db_table = "content\".\"film_work"
         # Следующие два поля отвечают за название модели в интерфейсе
-        verbose_name = 'Кинопроизведение'
-        verbose_name_plural = 'Кинопроизведения'
+        verbose_name = _('FilmWork')
+        verbose_name_plural = _('FilmWorks')
 
     def __str__(self):
         return self.title 
@@ -74,8 +75,8 @@ class GenreFilmWork(UUIDMixin):
     created = models.DateTimeField(auto_now_add=True)
     class Meta:
         db_table = "content\".\"genre_film_work" 
-        verbose_name = 'Жанр фильма'
-        verbose_name_plural = 'Жанры фильма'
+        verbose_name = _('Film Genre')
+        verbose_name_plural = _('Film Genres')
 
 
 class PersonFilmWork(UUIDMixin):
@@ -85,6 +86,6 @@ class PersonFilmWork(UUIDMixin):
     created = models.DateTimeField(auto_now_add=True)
     class Meta:
         db_table = "content\".\"person_film_work" 
-        verbose_name = 'В фильме снимался'
-        verbose_name_plural = 'В фильме снимались'
+        verbose_name = _('Person in FilmWork')
+        verbose_name_plural = _('Person in FilmWorks')
         
