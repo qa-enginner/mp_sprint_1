@@ -1,0 +1,3 @@
+psycopg
+dotenv
+pytz

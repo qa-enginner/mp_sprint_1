@@ -1,4 +1,0 @@
-django==4.2.11
-flake8==6.1.0
-python-dotenv==1.2.1
-django-split-settings==1.2.0
