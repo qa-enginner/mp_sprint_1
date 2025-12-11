@@ -1,8 +1,10 @@
 /movies_admin/venv
 /movies_admin/config/.env
 /movies_admin/config/__pycache__
+/movies_admin/movies/__pycache__
 /movies_admin/config/.pytest_cache
 /sqlite_to_postgres/venv
 /sqlite_to_postgres/.env
 /sqlite_to_postgres/__pycache__
 /sqlite_to_postgres/.pytest_cache
+/.venv

@@ -1229,31 +1229,31 @@ msgstr ""
 
 #: movies/models.py:24
 msgid "name"
-msgstr ""
+msgstr "Название"
 
 #: movies/models.py:25 movies/models.py:53
 msgid "description"
-msgstr ""
+msgstr "Описание"
 
 #: movies/models.py:31
 msgid "Genre"
-msgstr ""
+msgstr "Жанр"
 
 #: movies/models.py:32
 msgid "Genres"
-msgstr ""
+msgstr "Жанры"
 
 #: movies/models.py:39
 msgid "full_name"
-msgstr ""
+msgstr "Имя актёра"
 
 #: movies/models.py:45
 msgid "Actor"
-msgstr ""
+msgstr "Имя актёра"
 
 #: movies/models.py:46
 msgid "Actors"
-msgstr ""
+msgstr "Актёры"
 
 #: movies/models.py:52
 msgid "title"
@@ -1261,36 +1261,36 @@ msgstr "Название"
 
 #: movies/models.py:54
 msgid "creation_date"
-msgstr ""
+msgstr "Дата создания"
 
 #: movies/models.py:55
 msgid "type"
-msgstr ""
+msgstr "Тип"
 
 #: movies/models.py:56
 msgid "rating"
-msgstr ""
+msgstr "Рейтинг"
 
 #: movies/models.py:66
 msgid "FilmWork"
-msgstr ""
+msgstr "Название"
 
 #: movies/models.py:67
 msgid "FilmWorks"
-msgstr ""
+msgstr "Названия"
 
 #: movies/models.py:78
 msgid "Film Genre"
-msgstr ""
+msgstr "Жнар"
 
 #: movies/models.py:79
 msgid "Film Genres"
-msgstr ""
+msgstr "Жанры"
 
 #: movies/models.py:89
 msgid "Person in FilmWork"
-msgstr ""
+msgstr "В фильме снимался"
 
 #: movies/models.py:90
 msgid "Person in FilmWorks"
-msgstr ""
+msgstr "В фильме снимались"
