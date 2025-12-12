@@ -128,6 +128,7 @@ class GenreFilmWork(UUIDMixin):
         db_table = "content\".\"genre_film_work"
         verbose_name = _('Film Genre')
         verbose_name_plural = _('Film Genres')
+        unique_together = ('film_work', 'genre')
 
 
 class PersonFilmWork(UUIDMixin):
@@ -148,3 +149,4 @@ class PersonFilmWork(UUIDMixin):
         db_table = "content\".\"person_film_work"
         verbose_name = _('Person in FilmWork')
         verbose_name_plural = _('Person in FilmWorks')
+        unique_together = ('film_work', 'person', 'role')
